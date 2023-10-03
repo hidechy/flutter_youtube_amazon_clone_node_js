@@ -6,8 +6,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:test_amazon_clone_node_js/features/home/home_screen.dart';
 
+import '../../common/widgets/bottom_bar.dart';
 import '../../constants/error_handling.dart';
 import '../../constants/global_variables.dart';
 import '../../constants/utils.dart';
@@ -71,21 +71,13 @@ class AuthService {
         response: res,
         context: context,
         onSuccess: () async {
-          print('aaa');
-
-          final SharedPreferences prefs = await SharedPreferences.getInstance();
-
-          print('bbb');
+          final prefs = await SharedPreferences.getInstance();
 
           Provider.of<UserProvider>(context, listen: false).setUser(user: res.body);
 
-          print('ccc');
-
           await prefs.setString('x-auth-token', jsonDecode(res.body)['token']);
 
-          print('ddd');
-
-          await Navigator.pushNamedAndRemoveUntil(context, HomeScreen.routeName, (route) => false);
+          await Navigator.pushNamedAndRemoveUntil(context, BottomBar.routeName, (route) => false);
         },
       );
     } catch (e) {

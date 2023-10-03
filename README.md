@@ -9,3 +9,7 @@
 # mongodb
 
 -[mongodb](https://www.mongodb.com/ja-jp)
+---
+
+- (03:03:58) Persisting State
+- 動かなかったので無視

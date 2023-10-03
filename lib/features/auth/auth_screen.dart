@@ -49,6 +49,17 @@ class _AuthScreenState extends State<AuthScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                //=========================
+                ElevatedButton(
+                  onPressed: () {
+                    _emailController.text = 'hide.toyoda@gmail.com';
+                    _passwordController.text = 'hidechy4819';
+                  },
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.redAccent),
+                  child: const Text('dummy'),
+                ),
+                //=========================
+
                 const Text('Welcome', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500)),
                 ListTile(
                   tileColor:
