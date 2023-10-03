@@ -13,12 +13,12 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
         hintText: hintText,
-        border: OutlineInputBorder(borderSide: BorderSide(color: Colors.black38)),
-        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black38)),
+        border: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black38)),
+        enabledBorder: const OutlineInputBorder(borderSide: BorderSide(color: Colors.black38)),
       ),
       validator: (val) {
         if (val == null || val.isEmpty) {
-          return 'enter ${hintText}';
+          return 'enter $hintText';
         }
 
         return null;

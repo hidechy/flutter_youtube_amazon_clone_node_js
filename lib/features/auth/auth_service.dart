@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously, avoid_catches_without_on_clauses
+
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
@@ -11,7 +13,7 @@ class AuthService {
   Future<void> signUpUser(
       {required BuildContext context, required String email, required String password, required String name}) async {
     try {
-      User user = User(
+      final user = User(
         id: '',
         name: name,
         email: email,
@@ -21,8 +23,8 @@ class AuthService {
         token: '',
       );
 
-      http.Response res = await http.post(
-        Uri.parse('${uri}/api/signup'),
+      final res = await http.post(
+        Uri.parse('$uri/api/signup'),
         body: user.toJson(),
         headers: <String, String>{'Content-Type': 'application/json; charset=UTF-8'},
       );

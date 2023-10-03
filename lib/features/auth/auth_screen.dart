@@ -8,9 +8,9 @@ import 'auth_service.dart';
 enum Auth { signin, signup }
 
 class AuthScreen extends StatefulWidget {
-  static const String routeName = '/auth-screen';
-
   const AuthScreen({super.key});
+
+  static const String routeName = '/auth-screen';
 
   @override
   State<AuthScreen> createState() => _AuthScreenState();
@@ -44,7 +44,7 @@ class _AuthScreenState extends State<AuthScreen> {
       backgroundColor: GlobalVariables.greyBackgroundCOlor,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,24 +67,22 @@ class _AuthScreenState extends State<AuthScreen> {
                 ),
                 if (_auth == Auth.signup) ...[
                   Container(
-                    padding: EdgeInsets.all(8),
-                    decoration: BoxDecoration(color: GlobalVariables.backgroundColor),
+                    padding: const EdgeInsets.all(8),
+                    decoration: const BoxDecoration(color: GlobalVariables.backgroundColor),
                     child: Form(
                       key: _signUpFormKey,
                       child: Column(
                         children: [
                           CustomTextField(controller: _nameController, hintText: 'name'),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           CustomTextField(controller: _emailController, hintText: 'email'),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           CustomTextField(controller: _passwordController, hintText: 'password'),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           CustomButton(
                             text: 'Sign Up',
                             onTap: () {
                               if (_signUpFormKey.currentState!.validate()) {
-                                print('aaaaa');
-
                                 signUpUser();
                               }
                             },
@@ -111,16 +109,16 @@ class _AuthScreenState extends State<AuthScreen> {
                 ),
                 if (_auth == Auth.signin) ...[
                   Container(
-                    padding: EdgeInsets.all(8),
-                    decoration: BoxDecoration(color: GlobalVariables.backgroundColor),
+                    padding: const EdgeInsets.all(8),
+                    decoration: const BoxDecoration(color: GlobalVariables.backgroundColor),
                     child: Form(
                       key: _signInFormKey,
                       child: Column(
                         children: [
                           CustomTextField(controller: _emailController, hintText: 'email'),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           CustomTextField(controller: _passwordController, hintText: 'password'),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           CustomButton(
                             text: 'Sign In',
                             onTap: () {},
