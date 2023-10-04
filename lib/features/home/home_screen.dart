@@ -5,6 +5,7 @@ import '../../constants/global_variables.dart';
 import '../../providers/user_provider.dart';
 import 'address_box.dart';
 import 'carousel_image.dart';
+import 'deal_of_day.dart';
 import 'top_categories.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -89,6 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const TopCategories(),
             const SizedBox(height: 10),
             const CarouselImage(),
+            const DealOfDay(),
             const SizedBox(height: 100),
             Text(user.toJson()),
           ],

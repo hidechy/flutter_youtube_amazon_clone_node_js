@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'common/widgets/bottom_bar.dart';
+import 'features/admin/admin_screen.dart';
 import 'features/auth/auth_screen.dart';
 import 'features/home/home_screen.dart';
 
@@ -27,6 +28,14 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
       return MaterialPageRoute(
         settings: routeSettings,
         builder: (context) => const BottomBar(),
+      );
+
+    ///
+
+    case AdminScreen.routeName:
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (context) => const AdminScreen(),
       );
 
     ///
