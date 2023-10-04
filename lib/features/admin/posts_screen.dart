@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'add_product_screen.dart';
+
 class PostsScreen extends StatefulWidget {
   const PostsScreen({super.key});
 
@@ -40,19 +42,26 @@ class _PostsScreenState extends State<PostsScreen> {
   //   );
   // }
   //
-  // void navigateToAddProduct() {
-  //   Navigator.pushNamed(context, AddProductScreen.routeName);
-  // }
-  //
-  //
-  //
 
+  ///
+  void navigateToAddProduct() {
+    Navigator.pushNamed(context, AddProductScreen.routeName);
+  }
+
+  ///
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        Text('posts'),
-      ],
+    return Scaffold(
+      body: const Column(
+        children: [
+          Text('posts'),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: navigateToAddProduct,
+        child: const Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
 
     /*
